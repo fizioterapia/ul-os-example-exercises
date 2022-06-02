@@ -5,7 +5,7 @@
 # Format: LOGIN --- NAME --- UID --- (SESSIONS)
 
 IFS=$'\n' # Input Field Separator (https://bash.cyberciti.biz/guide/$IFS)
-USERS=`who | tr -s ' ' | cut -d' ' -f1 | uniq -c`
+USERS=`who | tr -s ' ' | cut -d' ' -f1 | sort | uniq -c`
 for USER in $USERS; do
     SESSIONS=`echo $USER | tr -s ' ' | cut -d' ' -f2`
     LOGIN=`echo $USER | tr -s ' ' | cut -d' ' -f3`
