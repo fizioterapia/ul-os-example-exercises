@@ -15,7 +15,7 @@ L=$1
 P=$2
 
 for K in `seq $1 $2`; do
-    OUTPUT=`cat /etc/passwd | grep ".*:.*:$K"`
+    OUTPUT=`cat /etc/passwd | iconv -f ISO8859-2 -t UTF-8 | grep ".*:.*:$K"`
     LENGTH=${#OUTPUT} # length of string
     if [ $LENGTH -eq 0 ]; then
         echo $K;
