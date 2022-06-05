@@ -10,7 +10,7 @@
 ETC_FILES=`find /etc -readable -type f 2>/dev/null`
 OUTPUT="etc.all"
 
-IRS=$'\n'
+IFS=$'\n'
 FILES_READ=0
 
 echo "" > $OUTPUT

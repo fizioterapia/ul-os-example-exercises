@@ -15,7 +15,7 @@ LAST_WHO="who.txt"
 LIST="list.txt"
 
 while true; do
-    IRS=$'\n'
+    IFS=$'\n'
     NEW_USERS=`who | tr -s " " | cut -d" " -f1 | uniq`;
 
     echo "---" >> $LIST

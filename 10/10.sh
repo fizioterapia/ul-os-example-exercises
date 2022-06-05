@@ -9,7 +9,7 @@
 # comments
 
 FILES=`find /etc -type f -readable 2>/dev/null`
-IRS=$'\n'
+IFS=$'\n'
 for FILE in $FILES; do
     LINES=`cat $FILE | wc -l`
     LINESCLEAN=`cat $FILE | grep -v "^#" | wc -l`
