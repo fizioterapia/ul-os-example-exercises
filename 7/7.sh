@@ -23,7 +23,7 @@ for ID in `seq $FROM $TO`; do
     EXISTS=`id $ID 2>/dev/null`
     if [ ${#EXISTS} -gt 0 ]; then
         USERNAME=`echo $EXISTS | cut -d'(' -f2 | cut -d')' -f1`
-        LOGGED=`echo $LASTLOGINS | grep ^$USERNAME`
+        LOGGED=`echo "$LASTLOGINS" | grep "^$USERNAME"`
         DATA=`cat /etc/passwd | iconv -f ISO8859-2 -t UTF-8 | grep ^$USERNAME`
         NAME=`echo $DATA | cut -d':' -f5`
         if [ ${#LOGGED} -eq 0 ]; then
