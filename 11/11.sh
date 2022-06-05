@@ -8,7 +8,7 @@
 # Format: PID PROCESS_NAME STIME OWNER
 
 if [ $# -lt 2 ]; then
-    echo "KURWA PUŚĆ TO NA PODWÓRKACH"
+    echo "Usage: $0 <filename> <minutes>"
     exit
 fi
 
